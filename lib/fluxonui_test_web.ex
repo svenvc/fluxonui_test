@@ -84,6 +84,10 @@ defmodule FluxonUITestWeb do
 
       # HTML escaping functionality
       import Phoenix.HTML
+
+      # Fluxon UI components
+      use Fluxon
+
       # Core UI components
       import FluxonUITestWeb.CoreComponents
 
