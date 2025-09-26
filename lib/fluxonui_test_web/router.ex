@@ -18,6 +18,11 @@ defmodule FluxonUITestWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/todos", TodoLive.Index, :index
+    live "/todos/new", TodoLive.Form, :new
+    live "/todos/:id", TodoLive.Show, :show
+    live "/todos/:id/edit", TodoLive.Form, :edit
   end
 
   # Other scopes may use custom stacks.
