@@ -7,6 +7,19 @@
 # General application configuration
 import Config
 
+config :fluxonui_test, :scopes,
+  user: [
+    default: true,
+    module: FluxonUITest.Accounts.Scope,
+    assign_key: :current_scope,
+    access_path: [:user, :id],
+    schema_key: :user_id,
+    schema_type: :id,
+    schema_table: :users,
+    test_data_fixture: FluxonUITest.AccountsFixtures,
+    test_setup_helper: :register_and_log_in_user
+  ]
+
 config :fluxonui_test,
   namespace: FluxonUITest,
   ecto_repos: [FluxonUITest.Repo],
