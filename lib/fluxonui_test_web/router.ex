@@ -20,7 +20,7 @@ defmodule FluxonUITestWeb.Router do
   scope "/", FluxonUITestWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
   end
 
   # Other scopes may use custom stacks.
@@ -52,6 +52,7 @@ defmodule FluxonUITestWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{FluxonUITestWeb.UserAuth, :require_authenticated}] do
+      live "/", TodoLive.Index, :index
       live "/todos", TodoLive.Index, :index
       live "/todos/new", TodoLive.Form, :new
       live "/todos/:id", TodoLive.Show, :show
