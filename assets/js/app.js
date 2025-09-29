@@ -25,10 +25,12 @@ import {LiveSocket} from "phoenix_live_view"
 import {Hooks as FluxonHooks, DOM as FluxonDOM} from 'fluxon';
 import {hooks as colocatedHooks} from "phoenix-colocated/fluxonui_test"
 import topbar from "../vendor/topbar"
+import ThemeToggler from "./hooks/ThemeToggler"
 
 const hooks = {
   ...colocatedHooks,
   ...FluxonHooks,
+  ThemeToggler
 }
 
 const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")

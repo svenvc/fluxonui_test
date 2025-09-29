@@ -54,6 +54,9 @@ defmodule FluxonUITestWeb.Layouts do
             <.theme_toggle />
           </li>
           <li>
+            <.alt_theme_toggle />
+          </li>
+          <li>
             <a href="https://hexdocs.pm/phoenix/overview.html" class="btn btn-primary">
               Get Started <span aria-hidden="true">&rarr;</span>
             </a>
@@ -149,6 +152,22 @@ defmodule FluxonUITestWeb.Layouts do
         <.icon name="hero-moon-micro" class="size-4 opacity-75 hover:opacity-100" />
       </button>
     </div>
+    """
+  end
+
+  def alt_theme_toggle(assigns) do
+    ~H"""
+    <button
+      type="button"
+      class="size-5 flex text-foreground-softer cursor-pointer"
+      data-theme-toggler="light|dark"
+      id="alt-theme-toggler"
+      phx-hook="ThemeToggler"
+    >
+      <span class="sr-only">Toggle theme</span>
+      <span class="hero-moon w-full h-full in-data-[theme=dark]:inline hidden"></span>
+      <span class="hero-sun w-full h-full not-in-data-[theme=dark]:inline hidden"></span>
+    </button>
     """
   end
 end
