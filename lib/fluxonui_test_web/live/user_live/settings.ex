@@ -45,22 +45,24 @@ defmodule FluxonUITestWeb.UserLive.Settings do
           autocomplete="username"
           value={@current_email}
         />
-        <.input
-          field={@password_form[:password]}
-          type="password"
-          label="New password"
-          autocomplete="new-password"
-          required
-        />
-        <.input
-          field={@password_form[:password_confirmation]}
-          type="password"
-          label="Confirm new password"
-          autocomplete="new-password"
-        />
-        <.button variant="solid" phx-disable-with="Saving..." class="mt-6">
-          Save Password
-        </.button>
+        <div class="space-y-6">
+          <.input
+            field={@password_form[:password]}
+            type="password"
+            label="New password"
+            autocomplete="new-password"
+            required
+          />
+          <.input
+            field={@password_form[:password_confirmation]}
+            type="password"
+            label="Confirm new password"
+            autocomplete="new-password"
+          />
+          <.button variant="solid" phx-disable-with="Saving...">
+            Save Password
+          </.button>
+        </div>
       </.form>
     </Layouts.app>
     """

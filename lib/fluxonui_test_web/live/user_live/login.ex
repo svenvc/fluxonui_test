@@ -66,26 +66,28 @@ defmodule FluxonUITestWeb.UserLive.Login do
           phx-submit="submit_password"
           phx-trigger-action={@trigger_submit}
         >
-          <.input
-            readonly={!!@current_scope}
-            field={f[:email]}
-            type="email"
-            label="Email"
-            autocomplete="username"
-            required
-          />
-          <.input
-            field={@form[:password]}
-            type="password"
-            label="Password"
-            autocomplete="current-password"
-          />
-          <.button class="btn btn-primary w-full mt-6" name={@form[:remember_me].name} value="true">
-            Log in and stay logged in <span aria-hidden="true">→</span>
-          </.button>
-          <.button class="btn btn-primary btn-soft w-full mt-2">
-            Log in only this time
-          </.button>
+          <div class="space-y-6">
+            <.input
+              readonly={!!@current_scope}
+              field={f[:email]}
+              type="email"
+              label="Email"
+              autocomplete="username"
+              required
+            />
+            <.input
+              field={@form[:password]}
+              type="password"
+              label="Password"
+              autocomplete="current-password"
+            />
+            <.button class="btn btn-primary w-full" name={@form[:remember_me].name} value="true">
+              Log in and stay logged in <span aria-hidden="true">→</span>
+            </.button>
+            <.button class="btn btn-primary btn-soft w-full">
+              Log in only this time
+            </.button>
+          </div>
         </.form>
       </div>
     </Layouts.app>

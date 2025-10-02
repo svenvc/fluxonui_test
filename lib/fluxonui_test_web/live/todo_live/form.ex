@@ -17,11 +17,11 @@ defmodule FluxonUITestWeb.TodoLive.Form do
         <div class="space-y-6">
           <.input field={@form[:description]} type="text" label="Description" />
           <.date_picker field={@form[:due]} label="Due" />
+          <footer>
+            <.button phx-disable-with="Saving..." variant="solid">Save Todo</.button>
+            <.button navigate={return_path(@return_to, @todo)}>Cancel</.button>
+          </footer>
         </div>
-        <footer class="mt-10">
-          <.button phx-disable-with="Saving..." variant="solid">Save Todo</.button>
-          <.button navigate={return_path(@return_to, @todo)}>Cancel</.button>
-        </footer>
       </.form>
     </Layouts.app>
     """
